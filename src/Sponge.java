@@ -33,9 +33,29 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+    String submission = "";
+    boolean upper = false;
+    for (int i = 0; i < sentence.length(); i++) {
+      if (sentence.charAt(i)!= ' ') {
+        if (upper) {
+          submission = submission + Character.toUpperCase(sentence.charAt(i));
+          upper = false;
+        }
+        else {
+          submission = submission + Character.toLowerCase(sentence.charAt(i));
+          upper = true;
+        }
+      }
+      else {
+        submission = submission + " ";
+        upper = false;
+      }
+    }
+    return submission;
   }
-
+//Just remembered after finishing this that we aren't actually going to be running the code we do for the interviews. 
+//I did that a couple times to figure out my bugs, and although I don't see anything in the project about not running 
+//it I still feel like I shoulnd't have
 
   // Method to help with testing, you do not need to read this.
   public static void assertEqual(int testNumber, String actual, String expected) {

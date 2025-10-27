@@ -26,7 +26,45 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+    String output = "";
+    String temp = "";
+    for (int i = 0; i < sentence.length(); i++) {
+        if (sentence.charAt(i) != ' ') {
+            temp = temp + sentence.charAt(i);
+        }
+        else {
+            output = output + pigLatinWord(temp) + " ";
+            temp = "";
+        }
+        }
+        output = output+ pigLatinWord(temp);
+        return output;
+    }
+    public static String pigLatinWord (String word) {
+            if (word.charAt(0) == 'a') {
+                return word;
+            }
+            else if (word.charAt(0) == 'e') {
+                return word;
+            }
+            else if (word.charAt(0) == 'i') {
+                return word;
+            }
+            else if (word.charAt(0) == 'o') {
+                return word;
+            }
+            else if (word.charAt(0) == 'u') {
+                return word;
+            }
+            else {
+            String output = "";
+            for (int i = 1; i < word.length(); i++) {
+                output = output + word.charAt(i);
+            }
+            output = output + word.charAt(0);
+            output = output + "ay";
+            return output;
+        }
     }
 
 
